@@ -1,0 +1,13 @@
+server:
+  port: 5220
+logging: 
+  config: classpath:log4j2-development.yml
+spring: 
+  cloud: 
+    stream: 
+      kafka: 
+        binder: 
+          brokers: 10.0.0.162
+          defaultBrokerPort: 9872
+          zkNodes: 10.0.0.162
+          defaultZkPort: 2181

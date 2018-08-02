@@ -1,0 +1,60 @@
+server: 
+  protocol: org.apache.coyote.http11.Http11NioProtocol
+logging:
+  config: classpath:log4j2-development.yml
+spring: 
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 10.0.0.162
+          defaultBrokerPort: 9872
+          zkNodes: 10.0.0.162
+          defaultZkPort: 2181
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+  cache:
+    type: REDIS
+  redis:
+    database: 0
+    host: 10.0.0.162
+    port: 6379
+    password:
+    jedis: 
+      pool: 
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+    timeout: 2000
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://10.0.0.162:3306/monitoring?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8
+    username: root
+    password: kingdee8349
+    druid:
+      initialSize: 10
+      minIdle: 5
+      maxActive: 100
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMills: 300000
+      testOnBorrow: false
+      testWhileIdle: true
+      testOnReutrn: false
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      filters: stat,wall,log4j
+      useGlobalDataSourceStat: true
+#open-falcon的接口地址和登录的用户的账号和密码
+falcon:
+    user:
+      name: root #open-falcon账户名字，
+      sig: 81d05084b57111e7bb445254009494f2
+    pushUrl: http://111.230.166.38:1988/v1/push #推送自定义消息
+    api: http://111.230.166.38:18080/api/v1/
+    query:
+      history: graph/history #查询历史消息
+
