@@ -1,6 +1,15 @@
 logging: 
   config: classpath:log4j2-development.yml
+feign: 
+  hystrix: 
+    enabled: false
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 1000
 spring: 
+  sleuth: 
+    sampler: 
+      percentage: 1
   cloud: 
     stream: 
       kafka: 
@@ -22,7 +31,7 @@ spring:
       pool: 
         max-wait: -1
         max-idle: 8
-        min-idle: 0
+        min-idle: 0   
     timeout: 2000
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -43,4 +52,3 @@ spring:
       poolPreparedStatements: true
       maxPoolPreparedStatementPerConnectionSize: 20
       filters: stat,wall,log4j
-      useGlobalDataSourceStat: true
