@@ -7,9 +7,9 @@ spring:
     stream:
       kafka:
         binder:
-          brokers: 10.0.0.162
-          defaultBrokerPort: 9872
-          zkNodes: 10.0.0.162
+          brokers: 10.0.0.110
+          defaultBrokerPort: 9092
+          zkNodes: 10.0.0.110
           defaultZkPort: 2181
   jpa:
     show-sql: true
@@ -19,7 +19,7 @@ spring:
     type: REDIS
   redis:
     database: 0
-    host: 10.0.0.162
+    host: 10.0.0.110
     port: 6379
     password:
     jedis: 
