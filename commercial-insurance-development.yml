@@ -17,7 +17,7 @@ spring:
     database: 0
     host: 10.0.0.110
     port: 6379
-    password: 
+    password: "{cipher}AQAQJ4OOZS2Tw8ErJk/6OWbOhfx7LtVJczr952yVAQK62KDNoVyDTLA6zfm4iW4jX7Yk0g2W5DoonZrH8RblQDpcV0whTTQctoEFlDKTIf5nbEto3V7sArU6HDxCBjXR9VWIlf3jFwCsoFFf72EO/SeFm4TweURZat+aCWkJDNR4GWZnfzgGL3MfRBtnlFXtKUz6iKayxLrkID7Vh5+BB2kQgBKe9oj+WQ+NKTAm2DbvD5p7O4mnVXbLWJqS/LCEuFpa59fF/XzNL3Spw/1k2wjstZy2A9i4TlDoJWpWtM1xQhGLqoUK64pWQJW/zQ+VLYrIH3UQJeO6Gmk5GLJ3fVtD66PKB2HPXjFCMZ4UtUexB/Tywi9e8UDARXhBGFwTLdo="
     jedis: 
       pool: 
         max-wait: -1
