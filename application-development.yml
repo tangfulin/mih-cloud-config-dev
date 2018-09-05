@@ -1,0 +1,84 @@
+logging: 
+  config: classpath:log4j2-development.yml
+eureka: 
+  instance: 
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}    
+hystrix:
+  stream: 
+    maxConcurrentConnections: 10
+management: 
+  endpoint: 
+    health: 
+      show-details: ALWAYS
+  endpoints:
+    web: 
+      exposure:
+        include: "*"
+spring: 
+  cloud: 
+    stream: 
+      kafka: 
+        binder: 
+          brokers: 10.0.0.110
+  sleuth:
+    sampler:
+      probability: 1.0
+  kafka:
+    bootstrap-servers:
+    - 10.0.0.110:9092
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+      naming:
+        physical-strategy:  org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  cache:
+    type: REDIS
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+    serialization:
+      write-dates-as-timestamps: false
+      write-null-map-values: false
+      write-empty-json-arrays: false
+    deserialization:
+      accept-single-value-as-array: true
+      accept-empty-array-as-null-object: true
+  redis: 
+    database: 0
+    host: 10.0.0.110
+    port: 6379
+    password: "{cipher}AQBSQDWwxoE1MOTovH4bgd6HwPk3m0wMaN0Btc0Vc4Pl/K9NzPXOzl88+JcmnkZAGQYwJ1kLQW0RV41r7a0n33VmwBXXpwIM/3Z3zrERNChRJtAV6o92yjN9HaY2iaSk6fIBTUSbTWiDyLFyDcTQqLTmueA/ZSNWW4bXTQIscjkvfAyoxqOBFXa4nQ3DNYp1gz5nmw7fCQewnj19mENZKmEhy6Cqi9264EMEIFZmNAKpcyELjoDFvCZxGMtK1T1FhVwinb5Q1Eg8vdFZfHKAZzkBJfoySpSt8QPE0rToZxbrzeU3TOX4lOScb9HcXKtexy0nX440OJjEU+1ec6V2yUF3vTvj+TijfXEtWqBLyroc+aR2BG1lVX4nUMWI5yRYhow="
+    jedis: 
+      pool: 
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+    timeout: 2000
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://10.0.0.162:3306/OP?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8
+    username: "{cipher}AQCNcB26tYGlE8fptFH/7NNkJYoNpxfUkdqsECR4bsT/LIKV++6AUPta1FEta1MWX2MZix+r/K1HKu3S27t6Wq/JibHoku6xb4wh1EbgKDxlx4QpjLuZOWng3RgrK7Wg8GOHBgLdbW47ASP1a/32DoLs3058YmGTGlmQomDuhprs/JDbSu6FO6/dHKbsQ+ySf7XOoFQ36QI99dYOQihSfw4MWuD9dfhZtyW+zSGn+VX0jB32aLPWVrd7Jk8XxISdpEEH2DtbZB1rVFH2wwu5nmZPy2cGLyrVDc+xlNQPQm/ADGEGHHscJ2RDQuSw1JTmOz4t2N8RzoUwePieIAVjznTgP0OXOofmgFd+9O9t1eo8jw4RV8Ide5LCqFNwbQoyXu4="
+    password: "{cipher}AQAzhTLpq6S4UGyVe5xNJcKjG+G534/nw+ADVNfqpKe+EzOpR3YD6ZckHo+FyYi+YbZ8cPm9zy5oFcqG5F/KcJ3mC0JozvPVzPipY+TZRf57OzRlVOeS66y9Q/aRUGdbn0wPk6z1i5T2kFVTi3Dmx35qVapVNDrHvVr5BbcE48eXvyKy5sutOT8i9/Eif6MjzKKk/jqfbRdwcAhRxzWyumkjyK6XiF5h7Hd7A/LOiofQaTyyoGuX29lDcgouJPC9iyBW3NA5MsjZcgSZ5wIyiLDTF5PIiuPh5Tv64zVD9dn20wGrOh0LYv1Xx5yNhCfDM8B48uB18KMcOy0w07/joJQEzm7bylHloZQFjyyEqznEAFqeSaJ58DcjfqNeDUz3+Pg="
+    druid: 
+      initialSize: 10
+      minIdle: 5
+      maxActive: 100
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMills: 300000
+      testOnBorrow: false
+      testWhileIdle: true
+      testOnReutrn: false
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      filters: stat,wall,log4j
+      useGlobalDataSourceStat: true
+  data: 
+    mongodb: 
+      #authentication-database: admin
+      #database: ehr
+      host: 10.0.0.162
+      username: root
+      port: 27017
