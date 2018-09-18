@@ -75,3 +75,5 @@ spring:
 cloudhub: 
   access-token-url: "http://10.0.1.49:8288/mwp/token/api/getAccessToken"
   api-url: "http://10.0.1.49:8288/mwp"
+kingdeehit:
+  api-gateway: "https://dev.mhealth100.com/gateway"
