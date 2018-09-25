@@ -83,4 +83,5 @@ logging:
     com.netflix.discovery: info
     com.kingdeehit.cloud.social.wechat.api: debug
     org.springframework.kafka: info
-    org.apache.http: info  
+    org.apache.http: info
+    io.lettuce: info  
