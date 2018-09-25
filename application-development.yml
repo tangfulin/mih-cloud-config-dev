@@ -73,7 +73,7 @@ spring:
       username: root
       port: 27017
 cloudhub: 
-  access-token-url: "http://10.0.1.49:8288/mwp/token/api/getAccessToken"
-  api-url: "http://10.0.1.49:8288/mwp"
+  access-token-url: "http://111.230.166.38/mwp/token/api/getAccessToken"
+  api-url: "http://111.230.166.38/mwp"
 kingdeehit:
   api-gateway: "https://dev.mhealth100.com/gateway"
