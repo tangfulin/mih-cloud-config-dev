@@ -73,6 +73,8 @@ spring:
 cloudhub: 
   access-token-url: "http://111.230.166.38/mwp/token/api/getAccessToken"
   api-url: "http://111.230.166.38/mwp"
+  client-id: patientPlatformUser
+  secret: dd516ce9a75eba5e15cc8c761830d2cd
 kingdeehit:
   api-gateway: "https://dev.mhealth100.com/gateway"
 logging:
