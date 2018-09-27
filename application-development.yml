@@ -73,8 +73,8 @@ spring:
 cloudhub: 
   access-token-url: "http://111.230.166.38/mwp/token/api/getAccessToken"
   api-url: "http://111.230.166.38/mwp"
-  client-id: patientPlatformUser
-  secret: dd516ce9a75eba5e15cc8c761830d2cd
+  client-id: "{cipher}AQAfHfBguC8b3snvlQIPgFkVL9ylOmwiHNTXMm24fxtFxkDKQ5ONdyTSNvQpmY1x0n9XrYQkgiZABrThVm9JjU43r+W1fYCYoqS3zk3IfQ/yiqUnqPulOoL22fxWPqb5q0WuyrEJUZcj/J5WbbBw7hPI/s4aIMdFFNHNoeWC2zarFaE+pLpfkpiwWkPT416ACf2PEFuhIof5toq65dt77DZFc2kYhHRUn9EXv0vy9MLG9pr7AOjcmKAac5RFqziB/pab5/sjsNpkL63DpZX1nrniTeHGWgOBX3bXhzPTnssJN3PcRtCUCAWpkUbjAWu2+YkLlBPfe7x3xQ862gisqi0dlAK3DDKwwnSeXChJEfS9FVaBqG8uaUO8a73KYrCwT/8BWNGO5n/ucNoH6lk6cxLp"
+  secret: "{cipher}AQB6cFsC0oLBn4Zo9x1hDJqt00EYvFBqxBX6xHkZbZpHrR81cE14srPRyTPAy1s4qKDPDB7a3T4Ojddt4Sb3Ml+WMiypxlosbzQjzg97/nKZ+/IhzHYym9ODIhtgnKqW6/mXbQUVI3naqeNtOUDI3aTX7B0aitOaG/3vetH1VUE6VBI37zNuul5ZfMStIHx1tgS1dBUgJJkr55NcBqoJ8UkiQA8QNsO4S+PFdGHtRYtKaKT1MnIWPQJbTLWVUFhNByZ3/4W+nxvgJfk/po3bBWYRczlOnuDJfodmegO1O4GUUOkB/QRH86ebFYGk2ykGWXjf4A/ilU0Akh/BavTUFYFmpFG+ygrDQ0d53PxQ/N2waZ6P/1zXNLfEWf/4EtVRDwOnRD8+7YM/wFGj/bzLTnVxzcq5Nug0iSuuZtQLPaDTMg=="
 kingdeehit:
   api-gateway: "https://dev.mhealth100.com/gateway"
 logging:
