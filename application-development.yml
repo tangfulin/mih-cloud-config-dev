@@ -80,7 +80,7 @@ kingdeehit:
 logging:
   config: classpath:log4j2-development.yml
   level: 
-    com.kingdeehit.cloud: info
+    com.kingdeehit.cloud: debug
     org.apache.kafka: info
     org.apache.flume: info
     com.netflix.discovery: info    
