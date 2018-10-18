@@ -4,6 +4,11 @@ eureka:
 hystrix:
   stream: 
     maxConcurrentConnections: 10
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
 management: 
   endpoint: 
     health: 
