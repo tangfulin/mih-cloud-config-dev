@@ -9,7 +9,7 @@ hystrix:
       execution:
         timeout:
           enabled: false
-feign:
+feign: 
   client: 
     default-to-properties: false
     config: 
