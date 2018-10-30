@@ -9,6 +9,15 @@ hystrix:
       execution:
         timeout:
           enabled: false
+feign:
+  client:
+    config: 
+      default: 
+        connectTimeout: 1000
+        readTimeout: 10000
+      his-service: 
+        connectTimeout: 30000
+        readTimeout: 300000
 management: 
   endpoint: 
     health: 
