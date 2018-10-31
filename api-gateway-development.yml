@@ -19,6 +19,11 @@ spring:
       maxPoolPreparedStatementPerConnectionSize: 20
       filters: stat,wall,log4j
       useGlobalDataSourceStat: true
+ribbon: 
+  httpclient:
+    enabled: false
+  okhttp: 
+    enabled: true
 kingdeehit: 
   security: 
     allowedOrigin: "*"

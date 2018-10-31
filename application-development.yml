@@ -10,16 +10,20 @@ hystrix:
         timeout:
           enabled: false
 feign: 
+  httpclient: 
+    enabled: false
+  okhttp: 
+    enabled: true  
   client: 
     config: 
       default: 
         connectTimeout: 10000
         readTimeout: 30000
       his-service: 
-        connectTimeout: 30000
+        connectTimeout: 10000
         readTimeout: 300000
 ribbon:
-  connectTimeout: 30000
+  connectTimeout: 10000
   readTimeout: 300000
   socketTimeout: 300000
   MaxAutoRetries: 0
