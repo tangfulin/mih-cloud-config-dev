@@ -11,14 +11,16 @@ hystrix:
           enabled: false
 feign: 
   client: 
-    default-to-properties: false
     config: 
       default: 
-        connectTimeout: 1000
-        readTimeout: 10000
-      his-service: 
         connectTimeout: 30000
         readTimeout: 300000
+ribbon:
+  connectTimeout: 30000
+  readTimeout: 300000
+  socketTimeout: 300000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 0
 management: 
   endpoint: 
     health: 
