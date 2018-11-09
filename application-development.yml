@@ -28,19 +28,6 @@ ribbon:
   socketTimeout: 300000
   MaxAutoRetries: 0
   MaxAutoRetriesNextServer: 0
-management: 
-  endpoint: 
-    health: 
-      show-details: ALWAYS
-  endpoints:
-    web: 
-      exposure:
-        include: "*"
-  health: 
-    kafka: 
-      enabled: true
-    binders: 
-      enabled: true
 server: 
   tomcat: 
     accept-count: 20 
@@ -117,4 +104,17 @@ logging:
     com.kingdeehit.cloud.social.wechat.api: debug
     org.springframework.kafka: info
     org.apache.http: info
-    io.lettuce: info  
+    io.lettuce: info 
+management: 
+  endpoint: 
+    health: 
+      show-details: ALWAYS
+  endpoints:
+    web: 
+      exposure:
+        include: "*"
+  health: 
+    kafka: 
+      enabled: true
+    binders: 
+      enabled: true
