@@ -19,3 +19,4 @@ spring:
       maxPoolPreparedStatementPerConnectionSize: 20
       filters: stat,wall,log4j
       useGlobalDataSourceStat: true
+position: "gogogogo"   
