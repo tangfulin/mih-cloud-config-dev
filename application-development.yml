@@ -39,19 +39,15 @@ server:
     min-spare-threads: 5 # Minimum number of worker threads.
 spring: 
   cloud: 
-    stream: 
-      kafka: 
-        binder: 
-          brokers: 10.0.0.110
+    bus: 
+      trace: 
+        enabled: true
   sleuth:
     sampler:
       probability: 1.0
   zipkin: 
     sender: 
       type: KAFKA
-  kafka:
-    bootstrap-servers:
-    - 10.0.0.110:9092
   jpa:
     show-sql: true
     hibernate:
