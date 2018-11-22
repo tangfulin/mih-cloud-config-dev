@@ -39,6 +39,43 @@ server:
     min-spare-threads: 5 # Minimum number of worker threads.
 spring: 
   cloud: 
+    stream:  
+      bindings: 
+        springCloudBusInput: 
+          binder: cloud-bus
+        springCloudBusOutput: 
+          binder: cloud-bus
+        social-message-receive-out: 
+          binder: social-message
+          destination: social.message.receive
+        social-message-receive-in: 
+          binder: social-message
+          destination: social.message.receive
+        social-message-send-out: 
+          binder: social-message
+          destination: social.message.send
+        social-message-send-in: 
+          binder: social-message
+          destination: social.message.send
+      binders: 
+        cloud-bus: 
+          type: kafka
+          environment:
+            spring:
+              cloud:
+                stream:
+                  kafka:
+                    binder:
+                      brokers: 10.0.0.110 
+        social-message:   
+          type: kafka
+          environment:
+            spring:
+              cloud:
+                stream:
+                  kafka:
+                    binder:
+                      brokers: 10.0.0.110
     bus: 
       trace: 
         enabled: true
