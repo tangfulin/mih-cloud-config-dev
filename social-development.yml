@@ -1,4 +1,46 @@
 spring:  
+  cloud: 
+    stream:  
+      bindings: 
+        springCloudBusInput: 
+          binder: cloud-bus
+        springCloudBusOutput: 
+          binder: cloud-bus
+        social-message-receive-out: 
+          binder: social-message
+          destination: social.message.receive
+          group:  ${spring.application.name}
+        social-message-receive-in: 
+          binder: social-message
+          destination: social.message.receive
+          group:  ${spring.application.name}
+        social-message-send-out: 
+          binder: social-message
+          destination: social.message.send
+          group:  ${spring.application.name}
+        social-message-send-in: 
+          binder: social-message
+          destination: social.message.send
+          group:  ${spring.application.name}
+      binders: 
+        cloud-bus: 
+          type: kafka
+          environment:
+            spring:
+              cloud:
+                stream:
+                  kafka:
+                    binder:
+                      brokers: 10.0.0.110 
+        social-message:   
+          type: kafka
+          environment:
+            spring:
+              cloud:
+                stream:
+                  kafka:
+                    binder:
+                      brokers: 10.0.0.110
   datasource: 
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -19,4 +61,3 @@ spring:
       maxPoolPreparedStatementPerConnectionSize: 20
       filters: stat,wall,log4j
       useGlobalDataSourceStat: true
-position: "accbbbb"   

@@ -20,8 +20,8 @@ feign:
   client: 
     config: 
       default: 
-        connectTimeout: 10000
-        readTimeout: 30000
+        connectTimeout: 100000
+        readTimeout: 300000
       his-service: 
         connectTimeout: 10000
         readTimeout: 300000
@@ -37,7 +37,11 @@ server:
     max-connections: 10 # Maximum number of connections that the server accepts and processes at any given time.
     max-threads: 10 # Maximum number of worker threads.
     min-spare-threads: 5 # Minimum number of worker threads.
+    max-http-header-size: 81920 
 spring: 
+  kafka: 
+    bootstrap-servers:
+    - 10.0.0.110:9092
   cloud: 
     stream:  
       bindings: 
@@ -45,18 +49,6 @@ spring:
           binder: cloud-bus
         springCloudBusOutput: 
           binder: cloud-bus
-        social-message-receive-out: 
-          binder: social-message
-          destination: social.message.receive
-        social-message-receive-in: 
-          binder: social-message
-          destination: social.message.receive
-        social-message-send-out: 
-          binder: social-message
-          destination: social.message.send
-        social-message-send-in: 
-          binder: social-message
-          destination: social.message.send
       binders: 
         cloud-bus: 
           type: kafka
@@ -67,15 +59,6 @@ spring:
                   kafka:
                     binder:
                       brokers: 10.0.0.110 
-        social-message:   
-          type: kafka
-          environment:
-            spring:
-              cloud:
-                stream:
-                  kafka:
-                    binder:
-                      brokers: 10.0.0.110
     bus: 
       trace: 
         enabled: true
