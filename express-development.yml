@@ -19,3 +19,5 @@ spring:
       maxPoolPreparedStatementPerConnectionSize: 20
       filters: stat,wall,log4j
       useGlobalDataSourceStat: true
+ems:
+  url: http://14.23.151.106:8090/mgr/common

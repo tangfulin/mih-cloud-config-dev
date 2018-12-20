@@ -44,11 +44,46 @@ spring:
     - 10.0.0.110:9092
   cloud: 
     stream:  
+      default-binder: cloud-bus 
       bindings: 
         springCloudBusInput: 
           binder: cloud-bus
+          group: ${spring.application.name}@${spring.cloud.client.ip-address}:${server.port}
         springCloudBusOutput: 
           binder: cloud-bus
+          group: ${spring.application.name}@${spring.cloud.client.ip-address}:${server.port}
+        social-message-receive-out: 
+          binder: social-message
+          destination: social.message.receive
+          group:  ${spring.application.name}:social.message.receive.out
+        social-message-receive-in: 
+          binder: social-message
+          destination: social.message.receive
+          group:  ${spring.application.name}:social.message.receive.in
+        social-message-send-complete-out: 
+          binder: social-message
+          destination: social.message.send
+          group:  ${spring.application.name}:social.message.send.complete.out
+        social-message-send-complete-in: 
+          binder: social-message
+          destination: social.message.send
+          group:  ${spring.application.name}:social.message.send.complete.in
+        pay-notify-out: 
+          binder: pay-notify
+          destination: pay.notify
+          group:  ${spring.application.name}:pay.notify.out
+        pay-notify-in: 
+          binder: pay-notify
+          destination: pay.notify
+          group:  ${spring.application.name}:pay.notify.in
+        refund-notify-out: 
+          binder: pay-notify
+          destination: pay.notify
+          group:  ${spring.application.name}:refund.notify.out
+        refund-notify-in: 
+          binder: pay-notify
+          destination: pay.notify
+          group:  ${spring.application.name}:refund.notify.in
       binders: 
         cloud-bus: 
           type: kafka
@@ -59,6 +94,24 @@ spring:
                   kafka:
                     binder:
                       brokers: 10.0.0.110 
+        social-message:   
+          type: kafka
+          environment:
+            spring:
+              cloud:
+                stream:
+                  kafka:
+                    binder:
+                      brokers: 10.0.0.110
+        pay-notify:   
+          type: kafka
+          environment:
+            spring:
+              cloud:
+                stream:
+                  kafka:
+                    binder:
+                      brokers: 10.0.0.110
     bus: 
       trace: 
         enabled: true
