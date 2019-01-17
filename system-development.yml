@@ -1,3 +1,10 @@
+server: 
+  tomcat: 
+    accept-count: 50 
+    max-connections: 50 # Maximum number of connections that the server accepts and processes at any given time.
+    max-threads: 50 # Maximum number of worker threads.
+    min-spare-threads: 10 # Minimum number of worker threads.
+    max-http-header-size: 81920 
 spring: 
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource

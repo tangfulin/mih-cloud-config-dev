@@ -18,6 +18,14 @@ feign:
   okhttp: 
     enabled: true  
   client: 
+    pass: 
+      headers:
+        - token
+        - tenantid
+        - userid
+        - openid
+        - scope
+        - providerid
     config: 
       default: 
         connectTimeout: 100000
@@ -78,11 +86,11 @@ spring:
           group:  ${spring.application.name}:pay.notify.in
         refund-notify-out: 
           binder: pay-notify
-          destination: pay.notify
+          destination: refund.notify
           group:  ${spring.application.name}:refund.notify.out
         refund-notify-in: 
           binder: pay-notify
-          destination: pay.notify
+          destination: refund.notify
           group:  ${spring.application.name}:refund.notify.in
       binders: 
         cloud-bus: 
@@ -165,6 +173,9 @@ cloudhub:
   secret: "{cipher}AQB6cFsC0oLBn4Zo9x1hDJqt00EYvFBqxBX6xHkZbZpHrR81cE14srPRyTPAy1s4qKDPDB7a3T4Ojddt4Sb3Ml+WMiypxlosbzQjzg97/nKZ+/IhzHYym9ODIhtgnKqW6/mXbQUVI3naqeNtOUDI3aTX7B0aitOaG/3vetH1VUE6VBI37zNuul5ZfMStIHx1tgS1dBUgJJkr55NcBqoJ8UkiQA8QNsO4S+PFdGHtRYtKaKT1MnIWPQJbTLWVUFhNByZ3/4W+nxvgJfk/po3bBWYRczlOnuDJfodmegO1O4GUUOkB/QRH86ebFYGk2ykGWXjf4A/ilU0Akh/BavTUFYFmpFG+ygrDQ0d53PxQ/N2waZ6P/1zXNLfEWf/4EtVRDwOnRD8+7YM/wFGj/bzLTnVxzcq5Nug0iSuuZtQLPaDTMg=="
 kingdeehit:
   api-gateway: "https://dev.mhealth100.com/gateway"
+  host: "https://dev.mhealth100.com"
+  payment-gateway: 
+    callback-url: "/patient/base/#/result"
 logging:
   config: classpath:log4j2-development.yml
   level: 
