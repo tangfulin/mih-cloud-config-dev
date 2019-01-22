@@ -52,9 +52,9 @@ spring:
     - 10.0.0.110:9092
   cloud: 
     stream:  
-      default-binder: cloud-bus 
+      default-binder: cloud-bus   
       bindings: 
-        springCloudBusInput: 
+        springCloudBusInput:           
           binder: cloud-bus
           group: ${spring.application.name}@${spring.cloud.client.ip-address}:${server.port}
         springCloudBusOutput: 
@@ -64,34 +64,74 @@ spring:
           binder: social-message
           destination: social.message.receive
           group:  ${spring.application.name}:social.message.receive.out
+          consumer: 
+            max-attempts: 1
+            headerMode: embeddedHeaders
+          producer: 
+            headerMode: embeddedHeaders
         social-message-receive-in: 
           binder: social-message
           destination: social.message.receive
           group:  ${spring.application.name}:social.message.receive.in
+          consumer: 
+            max-attempts: 1
+            headerMode: embeddedHeaders
+          producer: 
+            headerMode: embeddedHeaders
         social-message-send-complete-out: 
           binder: social-message
           destination: social.message.send
           group:  ${spring.application.name}:social.message.send.complete.out
+          consumer: 
+            max-attempts: 1
+            headerMode: embeddedHeaders
+          producer: 
+            headerMode: embeddedHeaders
         social-message-send-complete-in: 
           binder: social-message
           destination: social.message.send
           group:  ${spring.application.name}:social.message.send.complete.in
+          consumer: 
+            max-attempts: 1
+            headerMode: embeddedHeaders
+          producer: 
+            headerMode: embeddedHeaders
         pay-notify-out: 
           binder: pay-notify
           destination: pay.notify
           group:  ${spring.application.name}:pay.notify.out
+          consumer: 
+            max-attempts: 1
+            headerMode: embeddedHeaders
+          producer: 
+            headerMode: embeddedHeaders
         pay-notify-in: 
           binder: pay-notify
           destination: pay.notify
           group:  ${spring.application.name}:pay.notify.in
+          consumer: 
+            max-attempts: 1
+            headerMode: embeddedHeaders
+          producer: 
+            headerMode: embeddedHeaders
         refund-notify-out: 
           binder: pay-notify
           destination: refund.notify
           group:  ${spring.application.name}:refund.notify.out
+          consumer: 
+            max-attempts: 1
+            headerMode: embeddedHeaders
+          producer: 
+            headerMode: embeddedHeaders
         refund-notify-in: 
           binder: pay-notify
           destination: refund.notify
           group:  ${spring.application.name}:refund.notify.in
+          consumer: 
+            max-attempts: 1
+            headerMode: embeddedHeaders
+          producer: 
+            headerMode: embeddedHeaders
       binders: 
         cloud-bus: 
           type: kafka
@@ -187,6 +227,7 @@ logging:
     org.springframework.kafka: info
     org.apache.http: info
     io.lettuce: info 
+    kingdeehit.Cloud.API: debug
 management: 
   endpoint: 
     health: 
