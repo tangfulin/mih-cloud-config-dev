@@ -1,9 +1,15 @@
 eureka: 
   instance: 
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}  
+    instance-id: ${spring.cloud.client.ip-address}:${server.port} 
+    lease-expiration-duration-in-seconds: 10
+    lease-renewal-interval-in-seconds: 5 
   client: 
+    registry-fetch-interval-seconds: 5  
     healthcheck: 
       enabled: true  
+  server:
+    eviction-interval-timer-in-ms: 4000
+    renewal-threshold-update-interval-ms: 120000   
 hystrix:
   stream: 
     maxConcurrentConnections: 10
@@ -39,6 +45,7 @@ ribbon:
   socketTimeout: 300000
   MaxAutoRetries: 0
   MaxAutoRetriesNextServer: 0
+  ServerListRefreshInterval: 2000
 server: 
   tomcat: 
     accept-count: 20 
@@ -163,7 +170,6 @@ spring:
     bus: 
       trace: 
         enabled: true
-  sleuth:
     sampler:
       probability: 1.0
   zipkin: 
