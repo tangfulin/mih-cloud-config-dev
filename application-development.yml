@@ -63,14 +63,14 @@ spring:
       bindings: 
         springCloudBusInput:           
           binder: cloud-bus
-          group: ${spring.application.name}@${spring.cloud.client.ip-address}:${server.port}
+          group: ${spring.application.name}-${spring.cloud.client.ip-address}-${server.port}
         springCloudBusOutput: 
           binder: cloud-bus
-          group: ${spring.application.name}@${spring.cloud.client.ip-address}:${server.port}
+          group: ${spring.application.name}-${spring.cloud.client.ip-address}-${server.port}
         social-message-receive-out: 
           binder: social-message
           destination: social.message.receive
-          group:  ${spring.application.name}@social.message.receive.out
+          group:  ${spring.application.name}-social.message.receive.out
           consumer: 
             max-attempts: 1
             headerMode: embeddedHeaders
@@ -79,7 +79,7 @@ spring:
         social-message-receive-in: 
           binder: social-message
           destination: social.message.receive
-          group:  ${spring.application.name}@social.message.receive.in
+          group:  ${spring.application.name}-social.message.receive.in
           consumer: 
             max-attempts: 1
             headerMode: embeddedHeaders
@@ -88,7 +88,7 @@ spring:
         social-message-send-complete-out: 
           binder: social-message
           destination: social.message.send
-          group:  ${spring.application.name}@social.message.send.complete.out
+          group:  ${spring.application.name}-social.message.send.complete.out
           consumer: 
             max-attempts: 1
             headerMode: embeddedHeaders
@@ -97,7 +97,7 @@ spring:
         social-message-send-complete-in: 
           binder: social-message
           destination: social.message.send
-          group:  ${spring.application.name}@social.message.send.complete.in
+          group:  ${spring.application.name}-social.message.send.complete.in
           consumer: 
             max-attempts: 1
             headerMode: embeddedHeaders
@@ -106,7 +106,7 @@ spring:
         pay-notify-out: 
           binder: pay-notify
           destination: pay.notify
-          group:  ${spring.application.name}@pay.notify.out
+          group:  ${spring.application.name}-pay.notify.out
           consumer: 
             max-attempts: 1
             headerMode: embeddedHeaders
@@ -115,7 +115,7 @@ spring:
         pay-notify-in: 
           binder: pay-notify
           destination: pay.notify
-          group:  ${spring.application.name}@pay.notify.in
+          group:  ${spring.application.name}-pay.notify.in
           consumer: 
             max-attempts: 1
             headerMode: embeddedHeaders
@@ -124,7 +124,7 @@ spring:
         refund-notify-out: 
           binder: pay-notify
           destination: refund.notify
-          group:  ${spring.application.name}@refund.notify.out
+          group:  ${spring.application.name}-refund.notify.out
           consumer: 
             max-attempts: 1
             headerMode: embeddedHeaders
@@ -133,7 +133,7 @@ spring:
         refund-notify-in: 
           binder: pay-notify
           destination: refund.notify
-          group:  ${spring.application.name}@refund.notify.in
+          group:  ${spring.application.name}-refund.notify.in
           consumer: 
             max-attempts: 1
             headerMode: embeddedHeaders
