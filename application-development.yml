@@ -204,10 +204,11 @@ spring:
     timeout: 2000  
   data: 
     mongodb: 
-      #authentication-database: admin
-      #database: ehr
+      authentication-database: admin
+      database: ehr
       host: 10.0.0.162
-      username: root
+      username: "{cipher}AQA/s5pIwcUXXSP+BFEpBpHq0MUF3Pfu3zs5IvdY75FPlbxBMIlpqu4hUivG67LaQM0vaW92VSPavyTOQGOXsYD+qLufRF/o9umxtdF4dGvQ+Gla+jfafkExhHgJnJnjxpROrwrD9qkS2FGZBHD/CXEKH48nZADfxiCGvR+sbu3cGgZJMtvvPPdcmrHekW0AZUC5VOCejfR/HEO7DnwQ7yy13+YXpISMknVbTwmbN9b2c1i7icXpziM1leEZPh7L+XGaCTxLS3W6k+5lrXdpW5gnAIoiujP0Nys4S4NHh77xaryJBnGsAESrG7kwnfrvTZ4/qIA4rl3xVyKkM4XW8KOpEG+pdKhzxho0gkH9rSYttUPHciA7PGW3YsJDdWIu/E0="
+      password: "{cipher}AQBReaGWb+mCcK/RE8Yt7MqDga4YUN5VXhXr77HsX4u/wuVhX5D6B47s1U3NuJBRXD03EHhkxPBOJ5TSZY3TddJ++qbVS93fln2m1HFoCvtbjVPBmOIVCNGrOWhoq6fruf8NBdofG/bshN7OzNHcsfdXlSZ5Jx7wHaBH5SYLdPrLn+S3dVes08AWlESEFl4LUYROz08pX20Je/NkQ69mTC+8IM4+thL8UdXkjKvhfwO9Mdd5SPx9g5uciFnbMQPkO3SDF5eLnjNBu190do8ykg6HIHcCPlNSypoaFRTfau17HG+KE8BuXR2f/8MWOvbG2gi85qBQOzMm1DSTxLm4CMt1FEijX+vg7HvecU1dtfPTACnziO77zCHaH/k2fLOVP8Y="
       port: 27017
 cloudhub: 
   access-token-url: "http://111.230.166.38/mwp/token/api/getAccessToken"
