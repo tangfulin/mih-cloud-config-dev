@@ -57,7 +57,6 @@ spring:
   kafka: 
     bootstrap-servers:
     - 10.0.0.110:9092
-    - 10.0.0.129:9092
   cloud: 
     stream:  
       default-binder: cloud-bus   
@@ -149,7 +148,7 @@ spring:
                 stream:
                   kafka:
                     binder:
-                      brokers: 10.0.0.110,10.0.0.129 
+                      brokers: 10.0.0.110
         social-message:   
           type: kafka
           environment:
@@ -158,7 +157,7 @@ spring:
                 stream:
                   kafka:
                     binder:
-                      brokers: 10.0.0.110,10.0.0.129
+                      brokers: 10.0.0.110
         pay-notify:   
           type: kafka
           environment:
@@ -167,7 +166,7 @@ spring:
                 stream:
                   kafka:
                     binder:
-                      brokers: 10.0.0.110,10.0.0.129
+                      brokers: 10.0.0.110
     bus: 
       trace: 
         enabled: true
