@@ -23,7 +23,10 @@ ribbon:
   httpclient:
     enabled: false
   okhttp: 
-    enabled: true
+    enabled: true    
+feign:
+  hystrix: 
+    enabled: false
 kingdeehit: 
   security: 
     allowedOrigin: "*"
