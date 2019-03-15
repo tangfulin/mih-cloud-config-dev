@@ -9,20 +9,16 @@ eureka:
       enabled: true  
   server:
     eviction-interval-timer-in-ms: 4000
-    renewal-threshold-update-interval-ms: 120000   
-hystrix:
-  stream: 
-    maxConcurrentConnections: 10
-  command:
-    default:
-      execution:
-        timeout:
-          enabled: false
+    renewal-threshold-update-interval-ms: 120000
 feign: 
   httpclient: 
     enabled: false
   okhttp: 
     enabled: true  
+  sentinel:
+    enabled: true
+  hystrix: 
+    enabled: false
   client: 
     pass: 
       headers:
