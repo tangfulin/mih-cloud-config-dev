@@ -30,5 +30,5 @@ feign:
 kingdeehit: 
   security: 
     allowedOrigin: "*"
-    ignore-patterns: /v2/api-docs,/swagger-resources/**,/swagger-ui.html**,/webjars/**,/**/v2/api-docs,/actuator/**,/auth/oauth/token,/auth/oauth/check_token,/zuul/files/**,/**/oauth/**,/**/connect/**,/payment/trade/**/callback,/payment/trade/**/notify
+    ignore-patterns: /v2/api-docs,/swagger-resources/**,/swagger-ui.html**,/webjars/**,/**/v2/api-docs,/actuator/**,/auth/oauth/token,/auth/oauth/check_token,/zuul/files/**,/**/oauth/**,/**/connect/**,/payment/trade/**/callback,/payment/trade/**/notify,/health/tencentHealth/**
     admin-tenant: 001,00464    
