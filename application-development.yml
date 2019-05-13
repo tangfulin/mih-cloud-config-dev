@@ -15,10 +15,6 @@ feign:
     enabled: false
   okhttp: 
     enabled: true  
-  sentinel:
-    enabled: true
-  hystrix: 
-    enabled: false
   client: 
     pass: 
       headers:
