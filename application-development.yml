@@ -24,6 +24,7 @@ feign:
         - openid
         - scope
         - providerid
+        - clientid
     config: 
       default: 
         connectTimeout: 100000
