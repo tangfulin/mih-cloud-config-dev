@@ -19,3 +19,13 @@ spring:
       maxPoolPreparedStatementPerConnectionSize: 20
       filters: stat,wall,log4j
       useGlobalDataSourceStat: true
+mydoctor:
+  url: https://test3.mhealth100.com/ip-healthmanager-mobile-web/external
+alihealth:
+  medical:
+    url: http://140.205.164.4/top/router/rest
+    appkey: 25839239
+    secret: 0d9206a594a50121d093bf3490b90d1d
+
+tencentHealth:
+  url: https://med-biz-pre.wecity.qq.com/api/VipHosp
