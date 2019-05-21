@@ -19,3 +19,12 @@ spring:
       maxPoolPreparedStatementPerConnectionSize: 20
       filters: stat,wall,log4j
       useGlobalDataSourceStat: true
+      
+      
+jiujang:
+  pay:
+    server: http://netway.eqianjin.com.cn
+      
+bsbank:
+  pay:
+    enviroment: 0  #开发测试环境设置为0，正式环境设置为1
